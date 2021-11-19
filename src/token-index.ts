@@ -1,4 +1,4 @@
-import { local } from "./switch";
+import { local } from "./config/server";
 
 const tokenIndex = require("./local/token-index.json");
 

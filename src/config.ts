@@ -1,62 +1,16 @@
-/* We should using local secrets instead of debuggin secrets */
-import { getLocalEthConfig } from "./local/eth-config";
-import { local } from "./switch";
+import { local, restfulAPIUri } from "./config/server";
 import { L1ClientRole } from "./types";
-import { queryEthConfig } from "./remote/eth-config";
 import { getLocalMerkleTreeDbUri } from "./local/merkle-tree-config";
-import { queryMerkleTreeDbUri } from "./remote/merkle-tree-config";
 import { getLocalSubstrateNodeConfig } from "./local/substrate-node-config";
+import { getLocalEthConfig } from "./local/eth-config";
+import { queryMerkleTreeDbUri } from "./remote/merkle-tree-config";
 import { querySubstrateNodeConfig } from "./remote/substrate-node-config";
+import { queryEthConfig } from "./remote/eth-config";
 
 /*
-const HDWalletProvider = require("@truffle/hdwallet-provider");
-const Web3WsProvider = require("web3-providers-ws");
-const Web3HttpProvider = require("web3-providers-http");
-*/
+ * ========================= Wallet Config =========================
+ */
 
-const restfulAPIUri = "undefined";
-
-/*
-const ws_options = {
-  timeout: 30000, // ms
-
-  clientConfig: {
-    // Useful if requests are large
-    maxReceivedFrameSize: 100000000, // bytes - default: 1MiB
-    maxReceivedMessageSize: 100000000, // bytes - default: 8MiB
-
-    // Useful to keep a connection alive
-    keepalive: true,
-    keepaliveInterval: 60000, // ms
-  },
-
-  // Enable auto reconnection
-  reconnect: {
-    auto: true,
-    delay: 5000, // ms
-    maxAttempts: 5,
-    onTimeout: true,
-  },
-};
-
-const http_options = {
-  keepAlive: false,
-  timeout: 20000, // milliseconds,
-  withCredentials: false,
-};
-
-const ws_provider = (url: string) => {
-  let p = new Web3WsProvider(url, ws_options);
-  return p;
-};
-
-const http_provider = (url: string) => {
-  return new Web3HttpProvider(url, http_options);
-};
-*/
-
-// export const snap = "15";
-//snap: "3"
 export const WalletSnap = "15";
 
 /*
