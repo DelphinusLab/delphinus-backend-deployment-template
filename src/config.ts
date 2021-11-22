@@ -6,6 +6,8 @@ import { getLocalEthConfig } from "./local/eth-config";
 import { queryMerkleTreeDbUri } from "./remote/merkle-tree-config";
 import { querySubstrateNodeConfig } from "./remote/substrate-node-config";
 import { queryEthConfig } from "./remote/eth-config";
+import { getLocalL2EventRecorderDbUri } from "./local/l2-event-recorder";
+import { queryL2EventRecorderDbUri } from "./remote/l2-event-recorder";
 
 /*
  * ========================= Wallet Config =========================
@@ -67,4 +69,10 @@ export function getMerkleTreeDbUri() {
   return local
     ? getLocalMerkleTreeDbUri()
     : queryMerkleTreeDbUri(restfulAPIUri);
+}
+
+export function getL2EventRecorderDbUri() {
+  return local
+    ? getLocalL2EventRecorderDbUri()
+    : queryL2EventRecorderDbUri(restfulAPIUri);
 }
