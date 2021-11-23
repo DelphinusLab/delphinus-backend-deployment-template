@@ -14,7 +14,7 @@ const LocalEthConfig = {
   localtestnet1: {
     mongodbUrl: "mongodb://localhost:27017",
     wsSource: "ws://127.0.0.1:8546",
-    rpcSource: "ws://127.0.0.1:8545",
+    rpcSource: "http://127.0.0.1:8545",
     privateKey: "",
     deviceId: "15",
     monitorAccount: "0x6f6ef6dfe681b6593ddf27da3bfde22083aef88b",
