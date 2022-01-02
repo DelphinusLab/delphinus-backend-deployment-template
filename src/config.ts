@@ -15,7 +15,7 @@ async function fetchJson(uri: string) {
  * ========================= Wallet Config =========================
  */
 
-export const WalletSnap = "15";
+export const WalletSnap = "3";
 
 /*
  * =========================== Eth Config ===========================
@@ -58,12 +58,12 @@ export async function getSubstrateNodeConfig() {
   return local ? substrateNodeConfig : fetchJson(uri);
 }
 
-export function getMerkleTreeDbUri() {
+export async function getMerkleTreeDbUri() {
   let uri = restfulAPIUri + "/merkle-tree-config";
   return local ? merkleTreeConfig : fetchJson(uri);
 }
 
-export function getL2EventRecorderDbUri() {
+export async function getL2EventRecorderDbUri() {
   let uri = restfulAPIUri + "/l2-event-recorder";
   return local ? l2EventRecordConfig : fetchJson(uri);
 }

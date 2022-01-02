@@ -37,7 +37,7 @@ const EthConfig = (secrets: any) => {
       monitorAccount: "0x6f6ef6dfe681b6593ddf27da3bfde22083aef88b",
       chainName: "localtestnet1",
       l2Account: "//Alice",
-      enabled: true,
+      enabled: false,
     },
     {
       mongodbUrl: "mongodb://localhost:27017",
@@ -48,7 +48,7 @@ const EthConfig = (secrets: any) => {
       deviceId: "16",
       chainName: "localtestnet2",
       l2Account: "//Alice//stash",
-      enabled: true,
+      enabled: false,
     },
   ];
 };
