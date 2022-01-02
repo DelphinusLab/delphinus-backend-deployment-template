@@ -1,13 +1,15 @@
 import { local, restfulAPIUri } from "./config/server";
 import { L1ClientRole } from "./types";
-import { getLocalMerkleTreeDbUri } from "./local/merkle-tree-config";
-import { getLocalSubstrateNodeConfig } from "./local/substrate-node-config";
-import { getLocalEthConfig } from "./local/eth-config";
-import { queryMerkleTreeDbUri } from "./remote/merkle-tree-config";
-import { querySubstrateNodeConfig } from "./remote/substrate-node-config";
 import { queryEthConfig } from "./remote/eth-config";
-import { getLocalL2EventRecorderDbUri } from "./local/l2-event-recorder";
-import { queryL2EventRecorderDbUri } from "./remote/l2-event-recorder";
+
+import merkleTreeConfig from "../config/merkle-tree-config.json";
+import substrateNodeConfig from "../config/substrate-node.json";
+import l2EventRecordConfig from "../config/l2-event-record.json";
+import { ethConfigbyRole } from "../config/eth-config";
+
+async function fetchJson(uri: string) {
+  return await (await fetch(uri)).json();
+}
 
 /*
  * ========================= Wallet Config =========================
@@ -20,7 +22,7 @@ export const WalletSnap = "15";
  */
 
 export async function getEthConfigs(role: L1ClientRole) {
-  return local ? getLocalEthConfig(role) : queryEthConfig(role, restfulAPIUri);
+  return local ? ethConfigbyRole(role) : queryEthConfig(role, restfulAPIUri);
 }
 
 export async function getEnabledEthConfigs(role: L1ClientRole) {
@@ -51,28 +53,17 @@ export async function getConfigByChainId(role: L1ClientRole, chainId: string) {
   }
 }
 
-/*
- * =============================== L2 ===============================
- */
-
 export async function getSubstrateNodeConfig() {
-  return local
-    ? getLocalSubstrateNodeConfig()
-    : querySubstrateNodeConfig(restfulAPIUri);
+  let uri = restfulAPIUri + "/substrate-node";
+  return local ? substrateNodeConfig : fetchJson(uri);
 }
 
-/*
- * =============================== DB ===============================
- */
-
 export function getMerkleTreeDbUri() {
-  return local
-    ? getLocalMerkleTreeDbUri()
-    : queryMerkleTreeDbUri(restfulAPIUri);
+  let uri = restfulAPIUri + "/merkle-tree-config";
+  return local ? merkleTreeConfig : fetchJson(uri);
 }
 
 export function getL2EventRecorderDbUri() {
-  return local
-    ? getLocalL2EventRecorderDbUri()
-    : queryL2EventRecorderDbUri(restfulAPIUri);
+  let uri = restfulAPIUri + "/l2-event-recorder";
+  return local ? l2EventRecordConfig : fetchJson(uri);
 }

@@ -3,12 +3,6 @@ export enum L1ClientRole {
   Wallet,
 }
 
-export enum ProviderType {
-  WebsocketProvider,
-  HDWalletProvider,
-  HttpProvider,
-}
-
 export interface ChainConfig {
   chainName: string;
   mongodbUrl: string;
@@ -18,6 +12,5 @@ export interface ChainConfig {
   deviceId: string;
   monitorAccount: string;
   l2Account: string;
-  providerType: ProviderType;
   enabled: boolean;
 }
