@@ -1,11 +1,12 @@
 import { local, restfulAPIUri } from "./config/server";
-import { L1ClientRole } from "./types";
-import { queryEthConfig } from "./remote/eth-config";
+import { ChainConfig, L1ClientRole } from "./types";
 
 import merkleTreeConfig from "../config/merkle-tree-config.json";
 import substrateNodeConfig from "../config/substrate-node.json";
 import l2EventRecordConfig from "../config/l2-event-record.json";
 import { ethConfigbyRole } from "../config/eth-config";
+
+const fetch = require("node-fetch");
 
 async function fetchJson(uri: string) {
   return await (await fetch(uri)).json();
@@ -20,6 +21,21 @@ export const WalletSnap = "3";
 /*
  * =========================== Eth Config ===========================
  */
+
+async function queryEthConfig(
+  role: L1ClientRole,
+  apiUri: string
+): Promise<ChainConfig[]> {
+  let uri;
+  switch (role) {
+    case L1ClientRole.Monitor:
+      uri = apiUri + "/eth-config/monitor";
+      break;
+    case L1ClientRole.Wallet:
+      uri = apiUri + "/eth-config/wallet";
+  }
+  return (await fetchJson(uri)).chains;
+}
 
 export async function getEthConfigs(role: L1ClientRole) {
   return local ? ethConfigbyRole(role) : queryEthConfig(role, restfulAPIUri);
