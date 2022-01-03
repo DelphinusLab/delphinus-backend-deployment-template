@@ -4,7 +4,7 @@ import { ChainConfig, L1ClientRole } from "./types";
 import merkleTreeConfig from "../config/merkle-tree-config.json";
 import substrateNodeConfig from "../config/substrate-node.json";
 import l2EventRecordConfig from "../config/l2-event-record.json";
-import { ethConfigbyRole } from "../config/eth-config";
+import { ethConfigbyRole, WalletSnap as ConfigWalletSnap } from "../config/eth-config";
 
 const fetch = require("node-fetch");
 
@@ -16,7 +16,7 @@ async function fetchJson(uri: string) {
  * ========================= Wallet Config =========================
  */
 
-export const WalletSnap = "3";
+export const WalletSnap = ConfigWalletSnap;
 
 /*
  * =========================== Eth Config ===========================

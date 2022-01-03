@@ -2,6 +2,9 @@ import monitorSecret from "./monitor-secrets.json";
 import walletSecret from "./wallet-secrets.json";
 import { L1ClientRole } from "../src/types";
 
+const dev = false;
+const testnet = true;
+
 const EthConfig = (secrets: any) => {
   return [
     {
@@ -15,7 +18,8 @@ const EthConfig = (secrets: any) => {
       monitorAccount: "0x6f6ef6dfe681b6593ddf27da3bfde22083aef88b",
       deviceId: "97",
       l2Account: "//Alice//stash",
-      enabled: true,
+      enabled: testnet,
+      isSnap: false,
     },
     {
       chainName: "ropsten",
@@ -26,7 +30,8 @@ const EthConfig = (secrets: any) => {
       monitorAccount: "0x6f6ef6dfe681b6593ddf27da3bfde22083aef88b",
       deviceId: "3",
       l2Account: "//Alice",
-      enabled: true,
+      enabled: testnet,
+      isSnap: true,
     },
     {
       mongodbUrl: "mongodb://localhost:27017",
@@ -37,7 +42,8 @@ const EthConfig = (secrets: any) => {
       monitorAccount: "0x6f6ef6dfe681b6593ddf27da3bfde22083aef88b",
       chainName: "localtestnet1",
       l2Account: "//Alice",
-      enabled: false,
+      enabled: dev,
+      isSnap: true,
     },
     {
       mongodbUrl: "mongodb://localhost:27017",
@@ -48,7 +54,8 @@ const EthConfig = (secrets: any) => {
       deviceId: "16",
       chainName: "localtestnet2",
       l2Account: "//Alice//stash",
-      enabled: false,
+      enabled: dev,
+      isSnap: false,
     },
   ];
 };
@@ -61,3 +68,6 @@ export function ethConfigbyRole(role: L1ClientRole) {
       return EthConfig(monitorSecret);
   }
 }
+
+// TODO refactor: remove the placeholder parameter
+export const WalletSnap = EthConfig(walletSecret).filter(config => config.enabled && config.isSnap)[0].deviceId;

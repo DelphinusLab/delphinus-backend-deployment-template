@@ -13,4 +13,5 @@ export interface ChainConfig {
   monitorAccount: string;
   l2Account: string;
   enabled: boolean;
+  isSnap: boolean;
 }
