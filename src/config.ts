@@ -76,10 +76,12 @@ export async function getSubstrateNodeConfig() {
 
 export async function getMerkleTreeDbUri() {
   let uri = restfulAPIUri + "/merkle-tree-config";
-  return local ? merkleTreeConfig : fetchJson(uri);
+  let obj = local ? merkleTreeConfig : await (fetchJson(uri));
+  return obj.db;
 }
 
 export async function getL2EventRecorderDbUri() {
   let uri = restfulAPIUri + "/l2-event-recorder";
-  return local ? l2EventRecordConfig : fetchJson(uri);
+  let obj = local ? l2EventRecordConfig : await (fetchJson(uri));
+  return obj.db;
 }
