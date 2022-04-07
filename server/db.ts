@@ -1,8 +1,8 @@
-const DBConfig = require("../config/substrate-db.json");
+const DBConfig = require("../config/l2-event-record.json");
 const MongoClient = require("mongodb").MongoClient;
 
 function getURL() {
-  return "mongodb://" + DBConfig.hostname + ":" + DBConfig.port;
+  return DBConfig.db;
 }
 
 export class DBClient {
