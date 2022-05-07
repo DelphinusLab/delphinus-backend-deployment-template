@@ -12,11 +12,11 @@ export const extraTokens = [
   {
     chainId: "3",
     name: "usdt",
-    address:"6EE856Ae55B6E1A249f04cd3b947141bc146273c"
+    address:"110a13FC3efE6A245B50102D2d79B3E76125Ae83"
   },
   {
     chainId: "3",
     name: "usdc",
-    address: "FE724a829fdF12F7012365dB98730EEe33742ea2"
+    address: "07865c6E87B9F70255377e024ace6630C1Eaa37F"
   }
 ]
