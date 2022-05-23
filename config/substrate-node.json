@@ -1,5 +1,5 @@
 {
     "local_address": "ws://127.0.0.1",
-    "address": "ws://47.244.249.233",
+    "address": "wss://testnet.zmorph.io",
     "port": "9944"
 }
