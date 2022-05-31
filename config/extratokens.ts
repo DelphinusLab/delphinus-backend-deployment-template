@@ -9,7 +9,7 @@ export const extraTokens = [
     chainId: "97",
     name: "usdc",
     wei: 6,
-    address: "813b24C0f3BafEB03DB596B97D487ac362756961"
+    address: "64544969ed7EBf5f083679233325356EbE738930"
   },
   {
     chainId: "3",
