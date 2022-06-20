@@ -1,3 +1,12 @@
+export const contractsInfo = require("./contracts-info.json");
+
+export const Chains : Record<string, string> = {
+    "15": "local-test-net1",
+    "16": "local-test-net2",
+    "3":  "ropsten",
+    "97":  "bsctestnet",
+}
+
 export const extraTokens = [
   {
     chainId: "97",
@@ -9,7 +18,7 @@ export const extraTokens = [
     chainId: "97",
     name: "usdc",
     wei: 6,
-    address: "813b24C0f3BafEB03DB596B97D487ac362756961"
+    address: "64544969ed7EBf5f083679233325356EbE738930"
   },
   {
     chainId: "3",
