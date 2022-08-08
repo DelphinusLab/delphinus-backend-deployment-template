@@ -36,9 +36,8 @@ const EthConfig = (secrets: any) => {
     {
       chainName: "cronostestnet",
       mongodbUrl: "mongodb://localhost:27017",
-      // rpcSource: "https://evm-t3.cronos.org",
       rpcSource: "https://cronos-testnet-3.crypto.org:8545",
-      wsSource: "",
+      wsSource: "wss://cronos-testnet-3.crypto.org:8546",
       privateKey: secrets.accounts.deployer.priv,
       monitorAccount: "0x6f6ef6dfe681b6593ddf27da3bfde22083aef88b",
       deviceId: "338",
