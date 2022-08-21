@@ -42,7 +42,7 @@ function main() {
 
   app.get('/l2event/:start/:length', async (req:any, res:any) => {
     client.getRange('substrate', "l2_event", parseInt(req.params.start), parseInt(req.params.length)).then((result:any) => {
-      res.send(result);
+      res.status(200).send({"success": true, result: result});
     })
   });
 
