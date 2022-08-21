@@ -7,7 +7,6 @@ import { ethConfigbyRole } from "../config/eth-config";
 import { L1ClientRole } from "../src/types";
 import { DBClient } from './db';
 
-const BridgeJSON = require("solidity/build/contracts/Bridge.json");
 
 const app = express();
 const port = serverConf.port;
@@ -41,7 +40,16 @@ function main() {
     })
   });
 
+  app.get('/l2event/:start/:length', async (req:any, res:any) => {
+    client.getRange('substrate', "l2_event", parseInt(req.params.start), parseInt(req.params.length)).then((result:any) => {
+      res.send(result);
+    })
+  });
+
+
+  /* Layer1 event track
   app.get('/eth/:eid/:ename/', async (req:any, res:any) => {
+    const BridgeJSON = require("solidity/build/contracts/Bridge.json");
     const network_id = req.params.eid;
     const address = BridgeJSON.networks[network_id].address;
     const db_name = network_id + address;
@@ -49,6 +57,7 @@ function main() {
       res.send(result);
     })
   });
+  */
 }
 
 main();
