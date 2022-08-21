@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 import serverConf from "../config/server.json";
 import substrateNode from "../config/substrate-node.json";
@@ -9,6 +10,7 @@ import { DBClient } from './db';
 
 
 const app = express();
+app.use(cors());
 const port = serverConf.port;
 
 function main() {
