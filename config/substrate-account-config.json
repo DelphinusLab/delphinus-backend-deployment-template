@@ -1,0 +1,15 @@
+{
+    "secret_key_uri": [
+      "//Alice",
+      "//Bob"
+    ],
+    "authorities_seeds": [
+      "Alice",
+      "Bob"
+    ],
+    "pre_funded_seeds": [
+      "Alice",
+      "Bob"
+    ],
+    "sudo_account_seed": "Alice"
+  }
