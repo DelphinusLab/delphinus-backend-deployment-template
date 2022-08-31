@@ -31,7 +31,7 @@ export class DBClient {
       const db = client.db(database);
       let c = db.collection(collection);
       let cursor = c.find({});
-      let r = await cursor.skip(start).toArray();
+      let r = await cursor.skip(start).limit(length).toArray();
       return r;
     });
   }
