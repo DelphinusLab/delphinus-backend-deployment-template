@@ -10,6 +10,7 @@ const EthConfig = (secrets: any) => {
     {
       chainName: "bsctestnet",
       mongodbUrl: "mongodb://localhost:27017",
+      syncEventsStep: 20000,
       rpcSource:
         "https://bsc.getblock.io/testnet/?api_key=" + secrets.getblock_key,
       wsSource:
@@ -24,6 +25,7 @@ const EthConfig = (secrets: any) => {
     {
       chainName: "ropsten",
       mongodbUrl: "mongodb://localhost:27017",
+      syncEventsStep: 20000,
       rpcSource: "https://ropsten.infura.io/v3/" + secrets.infura_id,
       wsSource: "wss://ropsten.infura.io/ws/v3/" + secrets.infura_id,
       privateKey: secrets.accounts.deployer.priv,
@@ -36,6 +38,7 @@ const EthConfig = (secrets: any) => {
     {
       chainName: "cronostestnet",
       mongodbUrl: "mongodb://localhost:27017",
+      syncEventsStep: 2000,
       rpcSource: "https://cronos-testnet-3.crypto.org:8545",
       wsSource: "wss://cronos-testnet-3.crypto.org:8546",
       privateKey: secrets.accounts.deployer.priv,
@@ -47,6 +50,7 @@ const EthConfig = (secrets: any) => {
     },
     {
       mongodbUrl: "mongodb://localhost:27017",
+      syncEventsStep: 0,
       wsSource: "ws://127.0.0.1:8546",
       rpcSource: "http://127.0.0.1:8545",
       privateKey: "",
@@ -59,6 +63,7 @@ const EthConfig = (secrets: any) => {
     },
     {
       mongodbUrl: "mongodb://localhost:27017",
+      syncEventsStep: 0,
       rpcSource: "http://127.0.0.1:8745",
       wsSource: "ws://127.0.0.1:8746",
       privateKey: "",

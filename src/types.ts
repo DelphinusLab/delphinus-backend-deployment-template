@@ -6,6 +6,7 @@ export enum L1ClientRole {
 export interface ChainConfig {
   chainName: string;
   mongodbUrl: string;
+  syncEventsStep: number;
   wsSource: string;
   rpcSource: string;
   privateKey: string;
