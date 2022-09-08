@@ -5,6 +5,8 @@ export const Chains : Record<string, string> = {
     "16": "local-test-net2",
     "3":  "ropsten",
     "97":  "bsctestnet",
+    "338": "cronostestnet",
+    "2814": "rolluxtestnet"
 }
 
 export const extraTokens = [
@@ -31,5 +33,17 @@ export const extraTokens = [
     name: "usdc",
     wei: 6,
     address: "07865c6E87B9F70255377e024ace6630C1Eaa37F"
+  },
+  {
+    chainId: "338",
+    name: "usdt",
+    wei: 18,
+    address: "2AA588de227D0B5EF5775dB992ff7f2Fe82cf067"
+  },
+  {
+    chainId: "338",
+    name: "usdc",
+    wei: 6,
+    address: "c21223249CA28397B4B6541dfFaEcC539BfF0c59"
   }
 ]
