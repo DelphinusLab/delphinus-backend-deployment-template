@@ -37,13 +37,13 @@ export const extraTokens = [
   {
     chainId: "338",
     name: "usdt",
-    wei: 18,
-    address: "2AA588de227D0B5EF5775dB992ff7f2Fe82cf067"
+    wei: 6,
+    address: "E912124f1204208e3EBA49BAbe3Fc1028351808d"
   },
   {
     chainId: "338",
     name: "usdc",
     wei: 6,
-    address: "c21223249CA28397B4B6541dfFaEcC539BfF0c59"
+    address: "374AC6edeE4385411FF36BEf74D2c1723bD7A6e8"
   }
 ]
