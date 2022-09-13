@@ -24,4 +24,15 @@ export class DBClient {
       return db.collection(collection).find().toArray();
     });
   }
+
+  public async getRange(database: string, collection: string, start: number, length:number): Promise<Array<any>> {
+    console.log('getRange', database, collection, start, length);
+    return this.invokeDB(async (client: any) => {
+      const db = client.db(database);
+      let c = db.collection(collection);
+      let cursor = c.find({});
+      let r = await cursor.skip(start).limit(length).toArray();
+      return r;
+    });
+  }
 }
