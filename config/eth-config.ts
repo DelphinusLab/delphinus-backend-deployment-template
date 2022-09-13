@@ -12,9 +12,9 @@ const EthConfig = (secrets: any) => {
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 20000,
       rpcSource:
-        "https://bsc.getblock.io/testnet/?api_key=" + secrets.getblock_key,
+        "https://bsc.getblock.io/testnet/?api_key=" + secrets.getblock_key_bsctestnet,
       wsSource:
-        "wss://bsc.getblock.io/testnet/?api_key=" + secrets.getblock_key,
+        "wss://bsc.getblock.io/testnet/?api_key=" + secrets.getblock_key_bsctestnet,
       privateKey: secrets.accounts.deployer.priv,
       monitorAccount: "0x6f6ef6dfe681b6593ddf27da3bfde22083aef88b",
       deviceId: "97",
@@ -26,8 +26,8 @@ const EthConfig = (secrets: any) => {
       chainName: "ropsten",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 0,   //default step 0: sync to latest directly
-      rpcSource: "https://ropsten.infura.io/v3/" + secrets.infura_id,
-      wsSource: "wss://ropsten.infura.io/ws/v3/" + secrets.infura_id,
+      rpcSource: "https://eth.getblock.io/ropsten/?api_key=" + secrets.getblock_key_ropsten,
+      wsSource: "wss://eth.getblock.io/ropsten/?api_key=" + secrets.getblock_key_ropsten,
       privateKey: secrets.accounts.deployer.priv,
       monitorAccount: "0x6f6ef6dfe681b6593ddf27da3bfde22083aef88b",
       deviceId: "3",
