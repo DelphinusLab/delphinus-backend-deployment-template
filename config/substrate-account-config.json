@@ -1,16 +1,18 @@
 {
   "secret_key_uri": [
-    "//Cindy//stash",
+    "//Smith",
     "//Frank",
-    "//David"
+    "//Cindy//stash",
+    "//Richard"
   ],
   "authorities_seeds": [
     "Eve//stash"
   ],
   "pre_funded_seeds": [
-    "Cindy//stash",
+    "Smith",
     "Frank",
-    "David"
+    "Cindy//stash",
+    "Richard"
   ],
-  "sudo_account_seed": "Smith"
+  "sudo_account_seed": "sudo"
 }
