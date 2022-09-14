@@ -10,7 +10,7 @@ const EthConfig = (secrets: any) => {
     {
       chainName: "bsctestnet",
       mongodbUrl: "mongodb://localhost:27017",
-      syncEventsStep: 20000,
+      syncEventsStep: 100000,
       rpcSource:
         "https://bsc.getblock.io/testnet/?api_key=" + secrets.getblock_key_bsctestnet,
       wsSource:
