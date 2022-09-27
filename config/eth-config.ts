@@ -68,7 +68,6 @@ const EthConfig = (secrets: any) => {
     {
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 0,
-      gasWarningAmount: "1",
       wsSource: "ws://127.0.0.1:8546",
       rpcSource: "http://127.0.0.1:8545",
       privateKey: "",
@@ -82,7 +81,6 @@ const EthConfig = (secrets: any) => {
     {
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 0,
-      gasWarningAmount: "1",
       rpcSource: "http://127.0.0.1:8745",
       wsSource: "ws://127.0.0.1:8746",
       privateKey: "",
