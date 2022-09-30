@@ -41,7 +41,7 @@ const EthConfig = (secrets: any) => {
       chainName: "cronostestnet",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 2000,
-      gasWarningAmount: "1.8",
+      gasWarningAmount: "20",
       rpcSource: "https://cronos-testnet-3.crypto.org:8545",
       wsSource: "wss://cronos-testnet-3.crypto.org:8546",
       privateKey: secrets.accounts.deployer.priv,
