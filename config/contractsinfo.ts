@@ -23,6 +23,18 @@ export const extraTokens = [
     address: "64544969ed7EBf5f083679233325356EbE738930"
   },
   {
+    chainId: "5",
+    name: "usdt",
+    wei: 6,
+    address: "c81c248c44e96D85a0eCddc104843cE55B1ff35c"
+  },
+  {
+    chainId: "5",
+    name: "usdc",
+    wei: 6,
+    address: "07865c6E87B9F70255377e024ace6630C1Eaa37F"
+  },
+  {
     chainId: "338",
     name: "usdt",
     wei: 6,
