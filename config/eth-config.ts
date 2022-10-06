@@ -24,7 +24,7 @@ const EthConfig = (secrets: any) => {
       isSnap: false,
     },
     {
-      chainName: "Goerli",
+      chainName: "goerli",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 0,   //default step 0: sync to latest directly
       gasWarningAmount: "1",
