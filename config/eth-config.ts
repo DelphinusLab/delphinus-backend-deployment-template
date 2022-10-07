@@ -49,7 +49,7 @@ const EthConfig = (secrets: any) => {
       deviceId: "338",
       l2Account: "//Cindy//stash",
       enabled: testnet,
-      isSnap: true,
+      isSnap: false,
     },
     {
       chainName: "rolluxtestnet",
@@ -63,7 +63,7 @@ const EthConfig = (secrets: any) => {
       deviceId: "2814",
       l2Account: "//Richard",
       enabled: testnet,
-      isSnap: true,
+      isSnap: false,
     },
     {
       mongodbUrl: "mongodb://localhost:27017",
