@@ -1,45 +1,81 @@
 {
   "addressMap": {
     "gasToken": {
-      "3": {
+      "5": {
         "events": {},
         "links": {},
-        "address": "0x761eB5078fa21d6f47481A1880217947CeFe3EE8",
-        "transactionHash": "0x023b91cc53eeb6c44ca200de7bfbbdb9cba27b01bcddc401e9867e6bbf3806c7"
+        "address": "0xB01727147dA0E5f3cD77F35988D4e3B25Ac451C4",
+        "transactionHash": "0x0efa0781ee46d6d4e551617c81ef65035c184eb88ffe8d859002c0da069dd875"
       },
       "97": {
         "events": {},
         "links": {},
         "address": "0xCfC3970Db6C935398ac6457e3eB8579b7252e4B4",
         "transactionHash": "0x7d8d8a179c63a0d680e1ac68f180222903eca3bbf9711a48ea4b917fd60c2f17"
+      },
+      "338": {
+        "events": {},
+        "links": {},
+        "address": "0x22723E24A12E52Ac6d7A3892d3aa6c6C370EAb83",
+        "transactionHash": "0x033cc6d7dcf92a93bfb7fed27fb9834317d9d328dc05e615cdaf8f6f29cbb20e"
+      },
+      "2814": {
+        "events": {},
+        "links": {},
+        "address": "0xDd0a7e941BCBB79f80E69d8D8b8C398eE15AB301",
+        "transactionHash": "0x5b2904121e287d2f3d93aeb7ef756598206a601ceadd9d1d9570b467af09b9d6"
       }
     },
     "testToken": {
-      "3": {
+      "5": {
         "events": {},
         "links": {},
-        "address": "0x0C7Dd7D447a24a236461749fDdFa55eE132EA06c",
-        "transactionHash": "0x487015962f3b837b8fa50cb7353ce985ce8c7c0333ecdcf3444ae663c633cebf"
+        "address": "0xE63744a03211A282bBd8eFe5E11d05eA4ACDD069",
+        "transactionHash": "0x490be3d36e7bb3237498eb548f56c5450e9789b9c302d09640ecaaf0c01af6a1"
       },
       "97": {
         "events": {},
         "links": {},
         "address": "0xB7562eb55e44D9cAdB6E4698dA7BF870ADf97C36",
         "transactionHash": "0x767d23c3d0d17fb80609921130f0fd740c344b61a31b1c84754d8d32bf38a75c"
+      },
+      "338": {
+        "events": {},
+        "links": {},
+        "address": "0x0b1579898924350Ca6BEe5A9535dAd58C338a21e",
+        "transactionHash": "0x44deb83333d8966482a76103aed9f88ec21917ce670a0e0bf49a4e81d08c2165"
+      },
+      "2814": {
+        "events": {},
+        "links": {},
+        "address": "0xc484FB3E79b2894B254a74c80F193a4ec672cDED",
+        "transactionHash": "0x82558479934a2a778e8efb3106a6b5d42f0859551e64e0421e45bfb05cb68ebc"
       }
     },
     "bridge": {
-      "3": {
+      "5": {
         "events": {},
         "links": {},
-        "address": "0xe068F4495CD028a3DB2737540acAfA0EDbA621b8",
-        "transactionHash": "0xfbb2dd8aa6d38593a75b7698a329ec8e49d5ad280fbaf199cfcc30dcc7bfa3e1"
+        "address": "0x4E8cb29C77D211be0aE865b39C9Ae06B1891e9BF",
+        "transactionHash": "0xfac6a80a1f7ad07858b3d1057462b7299fb2c1ba42b7bf0cfde0d6ace6677963"
       },
       "97": {
         "events": {},
         "links": {},
-        "address": "0x765B9d4CcF3089E6eaB0087aa2afc27896038fE4",
-        "transactionHash": "0xc6fdd7882bb6c210bc8ffe998877db02c353312514f35e069e4119e32251dba8"
+        "address": "0x5680C8E5C3fe3463C9F157611b055830928Ad2B8",
+        "transactionHash": "0x665f9e93ccfc881a03b2d11c984aaf7ff59bd884dc8564e8434f8a3f1821dae6"
+      },
+      "338": {
+        "events": {},
+        "links": {},
+        "address": "0x51f64E1E93Fe52fE70CA47A5647BCE684f00742e",
+        "transactionHash": "0x26b827fbdfb73f39ef1dccdbafb3f8291713988752d87e030562e663c83eb702"
+      },
+      "2814": {
+        "events": {},
+        "links": {},
+        "address": "0xBa517debc5053Ac6edB811B6f946367709cC4671",
+        "transactionHash": "0x72b1be23711905dec2969d75e035f477571c07d16d8c2e985d83726522dc42ba"
       }
     }
   },
@@ -305,7 +341,8 @@
             }
           ],
           "stateMutability": "view",
-          "type": "function"
+          "type": "function",
+          "constant": true
         },
         {
           "inputs": [
@@ -348,7 +385,8 @@
             }
           ],
           "stateMutability": "view",
-          "type": "function"
+          "type": "function",
+          "constant": true
         },
         {
           "inputs": [],
@@ -361,7 +399,8 @@
             }
           ],
           "stateMutability": "view",
-          "type": "function"
+          "type": "function",
+          "constant": true
         },
         {
           "inputs": [
@@ -422,7 +461,8 @@
             }
           ],
           "stateMutability": "view",
-          "type": "function"
+          "type": "function",
+          "constant": true
         },
         {
           "inputs": [],
@@ -435,7 +475,8 @@
             }
           ],
           "stateMutability": "view",
-          "type": "function"
+          "type": "function",
+          "constant": true
         },
         {
           "inputs": [],
@@ -448,7 +489,8 @@
             }
           ],
           "stateMutability": "view",
-          "type": "function"
+          "type": "function",
+          "constant": true
         },
         {
           "inputs": [
@@ -527,7 +569,8 @@
             }
           ],
           "stateMutability": "view",
-          "type": "function"
+          "type": "function",
+          "constant": true
         }
       ]
     },
@@ -839,21 +882,33 @@
       "name": "sToken"
     },
     {
-      "chainId": "3",
-      "address": "0C7Dd7D447a24a236461749fDdFa55eE132EA06c",
-      "wei": 12,
+      "chainId": "5",
+      "address": "E63744a03211A282bBd8eFe5E11d05eA4ACDD069",
+      "wei": 18,
       "name": "tToken"
     },
     {
-      "chainId": "3",
-      "address": "761eB5078fa21d6f47481A1880217947CeFe3EE8",
-      "wei": 12,
+      "chainId": "5",
+      "address": "B01727147dA0E5f3cD77F35988D4e3B25Ac451C4",
+      "wei": 18,
       "name": "rio"
     },
     {
       "chainId": "97",
       "address": "B7562eb55e44D9cAdB6E4698dA7BF870ADf97C36",
-      "wei": 12,
+      "wei": 18,
+      "name": "tToken"
+    },
+    {
+      "chainId": "338",
+      "address": "0b1579898924350Ca6BEe5A9535dAd58C338a21e",
+      "wei": 18,
+      "name": "tToken"
+    },
+    {
+      "chainId": "2814",
+      "address": "c484FB3E79b2894B254a74c80F193a4ec672cDED",
+      "wei": 18,
       "name": "tToken"
     }
   ]
