@@ -47,6 +47,25 @@ function main() {
       res.status(200).send({"success": true, result: result});
     })
   });
+  app.get('/l2transactions', async (req:any, res:any) => {
+    // client.getRange('substrate', "l2_transactions", parseInt(req.params.start), parseInt(req.params.length)).then((result:any) => {
+    //   res.status(200).send({"success": true, result: result});
+    // });
+    client.getAll('substrate', "l2_transactions").then((result:any) => {
+      res.send(result);
+    });
+  });
+  app.get('/l2transactions/:l2Address', async (req:any, res:any) => {
+    // client.getRange('substrate', "l2_transactions", parseInt(req.params.start), parseInt(req.params.length)).then((result:any) => {
+    //   res.status(200).send({"success": true, result: result});
+    // });
+  
+    const {l2Address} = req.params;
+    console.log(l2Address);
+    client.getFiltered('substrate', "l2_transactions", "signer", l2Address).then((result:any) => {
+      res.send(result);
+    });
+  });
 
 
   /* Layer1 event track

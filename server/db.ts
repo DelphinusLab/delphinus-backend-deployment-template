@@ -35,4 +35,17 @@ export class DBClient {
       return r;
     });
   }
+  //filter collection by a field and value
+  public async getFiltered(database: string, collection: string, field: string, value: string): Promise<Array<any>> {
+    console.log('getFiltered', database, collection, field, value);
+    return this.invokeDB(async (client: any) => {
+      const db = client.db(database);
+      let c = db.collection(collection);
+      let filter: any = {};
+      filter[field] = value;
+      let cursor = c.find(filter);
+      let r = await cursor.toArray();
+      return r;
+    });
+  }
 }
