@@ -11,6 +11,7 @@ const EthConfig = (secrets: any) => {
       chainName: "bsctestnet",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 100000,
+      bufferBlocks: 20,
       gasWarningAmount: "1",
       rpcSource:
         "https://bsc.getblock.io/testnet/?api_key=" + secrets.getblock_key_bsctestnet,
@@ -27,6 +28,7 @@ const EthConfig = (secrets: any) => {
       chainName: "goerli",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 0,   //default step 0: sync to latest directly
+      bufferBlocks: 20,
       gasWarningAmount: "1",
       rpcSource: "https://eth.getblock.io/goerli/?api_key=" + secrets.getblock_key_goerli,
       wsSource: "wss://eth.getblock.io/goerli/?api_key=" + secrets.getblock_key_goerli,
@@ -41,6 +43,7 @@ const EthConfig = (secrets: any) => {
       chainName: "cronostestnet",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 2000,
+      bufferBlocks: 20,
       gasWarningAmount: "20",
       rpcSource: "https://cronos-testnet-3.crypto.org:8545",
       wsSource: "wss://cronos-testnet-3.crypto.org:8546",
@@ -55,6 +58,7 @@ const EthConfig = (secrets: any) => {
       chainName: "rolluxtestnet",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 20000,
+      bufferBlocks: 20,
       gasWarningAmount: "1",
       rpcSource: "https://testnet.rollux.com:2814/",
       wsSource: "",
