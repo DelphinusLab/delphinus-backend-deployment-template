@@ -18,5 +18,3 @@ export interface ChainConfig {
   enabled: boolean;
   isSnap: boolean;
 }
-
-
