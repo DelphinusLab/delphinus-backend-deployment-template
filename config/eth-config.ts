@@ -27,7 +27,7 @@ const EthConfig = (secrets: any) => {
     {
       chainName: "goerli",
       mongodbUrl: "mongodb://localhost:27017",
-      syncEventsStep: 0,   //default step 0: sync to latest directly
+      syncEventsStep: 100000,   //default step 0: sync to latest directly
       bufferBlocks: 20,
       gasWarningAmount: "1",
       rpcSource: "https://eth.getblock.io/goerli/?api_key=" + secrets.getblock_key_goerli,
