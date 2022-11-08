@@ -58,7 +58,6 @@ const EthConfig = (secrets: any) => {
       chainName: "rolluxtestnet",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 20000,
-      bufferBlocks: 20,
       gasWarningAmount: "1",
       rpcSource: "https://testnet.rollux.com:2814/",
       wsSource: "",
