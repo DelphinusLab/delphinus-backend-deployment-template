@@ -70,7 +70,8 @@ function main() {
       //   res.status(200).send({"success": true, result: result});
       // });
       const { l2Address, l2AccountIndex } = req.params;
-
+      console.log("l2Address", l2Address);
+      console.log("l2AccountIndex", l2AccountIndex);
       let txs = await client.invokeDB(async (client: any) => {
         const db = client.db("substrate");
         return await db
@@ -78,6 +79,7 @@ function main() {
           .find({
             $or: [{ signer: l2Address }, { accountIndex: l2AccountIndex }],
           })
+          .sort({ timestamp: -1 })
           .toArray();
       });
       res.send(txs);
