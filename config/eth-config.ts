@@ -1,6 +1,6 @@
 import monitorSecret from "./monitor-secrets.json";
 import walletSecret from "./wallet-secrets.json";
-import { L1ClientRole } from "../src/types";
+import { L1ClientRole, ChainConfig } from "../src/types";
 
 const dev = false;
 const testnet = true;
@@ -12,6 +12,7 @@ const EthConfig = (secrets: any) => {
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 100000,
       gasWarningAmount: "1",
+      blockExplorer: "https://testnet.bscscan.com",
       rpcSource:
         "https://bsc.getblock.io/testnet/?api_key=" +
         secrets.getblock_key_bsctestnet,
@@ -30,6 +31,7 @@ const EthConfig = (secrets: any) => {
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 100000, //default step 0: sync to latest directly
       gasWarningAmount: "1",
+      blockExplorer: "https://goerli.etherscan.io",
       rpcSource:
         "https://eth.getblock.io/goerli/?api_key=" +
         secrets.getblock_key_goerli,
@@ -47,6 +49,7 @@ const EthConfig = (secrets: any) => {
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 2000,
       gasWarningAmount: "20",
+      blockExplorer: "https://testnet.cronoscan.com",
       rpcSource: "https://cronos-testnet-3.crypto.org:8545",
       wsSource: "wss://cronos-testnet-3.crypto.org:8546",
       privateKey: secrets.accounts.deployer.priv,
@@ -61,6 +64,7 @@ const EthConfig = (secrets: any) => {
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 20000,
       gasWarningAmount: "1",
+      blockExplorer: "https://testnet.rollux.com",
       rpcSource: "https://testnet.rollux.com:2814/",
       wsSource: "",
       privateKey: secrets.accounts.deployer.priv,
@@ -99,7 +103,7 @@ const EthConfig = (secrets: any) => {
   ];
 };
 
-export function ethConfigbyRole(role: L1ClientRole) {
+export function ethConfigbyRole(role: L1ClientRole): ChainConfig[] {
   switch (role) {
     case L1ClientRole.Wallet:
       let walletConfig = EthConfig(walletSecret);
