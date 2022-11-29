@@ -13,9 +13,11 @@ const EthConfig = (secrets: any) => {
       syncEventsStep: 100000,
       gasWarningAmount: "1",
       rpcSource:
-        "https://bsc.getblock.io/testnet/?api_key=" + secrets.getblock_key_bsctestnet,
+        "https://bsc.getblock.io/testnet/?api_key=" +
+        secrets.getblock_key_bsctestnet,
       wsSource:
-        "wss://bsc.getblock.io/testnet/?api_key=" + secrets.getblock_key_bsctestnet,
+        "wss://bsc.getblock.io/testnet/?api_key=" +
+        secrets.getblock_key_bsctestnet,
       privateKey: secrets.accounts.deployer.priv,
       monitorAccount: "0x4D9A852e6AECD3A6E87FecE2cA109780E45E6F2D",
       deviceId: "97",
@@ -26,10 +28,13 @@ const EthConfig = (secrets: any) => {
     {
       chainName: "goerli",
       mongodbUrl: "mongodb://localhost:27017",
-      syncEventsStep: 100000,   //default step 0: sync to latest directly
+      syncEventsStep: 100000, //default step 0: sync to latest directly
       gasWarningAmount: "1",
-      rpcSource: "https://eth.getblock.io/goerli/?api_key=" + secrets.getblock_key_goerli,
-      wsSource: "wss://eth.getblock.io/goerli/?api_key=" + secrets.getblock_key_goerli,
+      rpcSource:
+        "https://eth.getblock.io/goerli/?api_key=" +
+        secrets.getblock_key_goerli,
+      wsSource:
+        "wss://eth.getblock.io/goerli/?api_key=" + secrets.getblock_key_goerli,
       privateKey: secrets.accounts.deployer.priv,
       monitorAccount: "0x4D9A852e6AECD3A6E87FecE2cA109780E45E6F2D",
       deviceId: "5",
@@ -97,11 +102,21 @@ const EthConfig = (secrets: any) => {
 export function ethConfigbyRole(role: L1ClientRole) {
   switch (role) {
     case L1ClientRole.Wallet:
-      return EthConfig(walletSecret);
+      let walletConfig = EthConfig(walletSecret);
+      //modify RPC Sources for wallet to be public endpoints
+      walletConfig.forEach((config) => {
+        config.rpcSource =
+          walletSecret.rpcSources[
+            config.chainName as keyof typeof walletSecret.rpcSources
+          ];
+      });
+      return walletConfig;
     case L1ClientRole.Monitor:
       return EthConfig(monitorSecret);
   }
 }
 
 // TODO refactor: remove the placeholder parameter
-export const WalletSnap = EthConfig(walletSecret).filter(config => config.enabled && config.isSnap)[0].deviceId;
+export const WalletSnap = EthConfig(walletSecret).filter(
+  (config) => config.enabled && config.isSnap
+)[0].deviceId;
