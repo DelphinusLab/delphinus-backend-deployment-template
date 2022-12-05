@@ -11,6 +11,7 @@ const EthConfig = (secrets: any) => {
       chainName: "bsctestnet",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 100000,
+      bufferBlocks: 20,
       gasWarningAmount: "1",
       blockExplorer: "https://testnet.bscscan.com",
       rpcSource:
@@ -30,6 +31,7 @@ const EthConfig = (secrets: any) => {
       chainName: "goerli",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 100000, //default step 0: sync to latest directly
+      bufferBlocks: 20,
       gasWarningAmount: "1",
       blockExplorer: "https://goerli.etherscan.io",
       rpcSource:
@@ -48,6 +50,7 @@ const EthConfig = (secrets: any) => {
       chainName: "cronostestnet",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 2000,
+      bufferBlocks: 20,
       gasWarningAmount: "20",
       blockExplorer: "https://testnet.cronoscan.com",
       rpcSource: "https://cronos-testnet-3.crypto.org:8545",

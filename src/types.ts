@@ -9,6 +9,7 @@ export interface ChainConfig {
   syncEventsStep: number;
   gasWarningAmount?: string;
   blockExplorer?: string;
+  bufferBlocks?: number;
   wsSource: string;
   rpcSource: string;
   privateKey: string;
