@@ -7,7 +7,8 @@ export interface ChainConfig {
   chainName: string;
   mongodbUrl: string;
   syncEventsStep: number;
-  gasWarningAmount?: string,
+  gasWarningAmount?: string;
+  bufferBlocks?: number;
   wsSource: string;
   rpcSource: string;
   privateKey: string;

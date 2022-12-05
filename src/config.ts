@@ -42,16 +42,16 @@ export async function getEthConfigs(role: L1ClientRole) {
 }
 
 export async function getEnabledEthConfigs(role: L1ClientRole) {
-  let configs = await getEthConfigs(role);
-  return configs.filter((config) => config.enabled);
+  let configs: ChainConfig[] = await getEthConfigs(role);
+  return configs.filter((config: ChainConfig) => config.enabled);
 }
 
 export async function getConfigByChainName(
   role: L1ClientRole,
   chainName: string
 ) {
-  let allConfigs = await getEthConfigs(role);
-  let config = allConfigs.find((config) => config.chainName === chainName);
+  let allConfigs: ChainConfig[] = await getEthConfigs(role);
+  let config = allConfigs.find((config:ChainConfig) => config.chainName === chainName);
   if (config !== undefined) {
     return config;
   } else {
@@ -60,8 +60,8 @@ export async function getConfigByChainName(
 }
 
 export async function getConfigByChainId(role: L1ClientRole, chainId: string) {
-  let allConfigs = await getEthConfigs(role);
-  let config = allConfigs.find((config) => config.deviceId === chainId);
+  let allConfigs: ChainConfig[] = await getEthConfigs(role);
+  let config = allConfigs.find((config:ChainConfig) => config.deviceId === chainId);
   if (config !== undefined) {
     return config;
   } else {
