@@ -15,11 +15,9 @@ const EthConfig = (secrets: any) => {
       gasWarningAmount: "1",
       blockExplorer: "https://testnet.bscscan.com",
       rpcSource:
-        "https://bsc.getblock.io/testnet/?api_key=" +
-        secrets.getblock_key_bsctestnet,
+        "https://rpc.ankr.com/bsc_testnet_chapel/" +  secrets.ankr_id,
       wsSource:
-        "wss://bsc.getblock.io/testnet/?api_key=" +
-        secrets.getblock_key_bsctestnet,
+        "wss://rpc.ankr.com/bsc_testnet_chapel/ws/" + secrets.ankr_id,
       privateKey: secrets.accounts.deployer.priv,
       monitorAccount: "0x4D9A852e6AECD3A6E87FecE2cA109780E45E6F2D",
       deviceId: "97",
@@ -34,11 +32,13 @@ const EthConfig = (secrets: any) => {
       bufferBlocks: 20,
       gasWarningAmount: "1",
       blockExplorer: "https://goerli.etherscan.io",
+      //rpcSource:
+        //"https://eth.getblock.io/goerli/?api_key=" +
+        //secrets.getblock_key_goerli,
       rpcSource:
-        "https://eth.getblock.io/goerli/?api_key=" +
-        secrets.getblock_key_goerli,
+        "https://rpc.ankr.com/eth_goerli/" + secrets.ankr_id,
       wsSource:
-        "wss://eth.getblock.io/goerli/?api_key=" + secrets.getblock_key_goerli,
+        "wss://rpc.ankr.com/eth_goerli/ws/" + secrets.ankr_id,
       privateKey: secrets.accounts.deployer.priv,
       monitorAccount: "0x4D9A852e6AECD3A6E87FecE2cA109780E45E6F2D",
       deviceId: "5",
