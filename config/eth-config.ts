@@ -66,6 +66,7 @@ const EthConfig = (secrets: any) => {
       chainName: "rolluxtestnet",
       mongodbUrl: "mongodb://localhost:27017",
       syncEventsStep: 20000,
+      bufferBlocks: 0,    //rollux take about 40 mins to generate new block so set it to 0
       gasWarningAmount: "1",
       blockExplorer: "https://testnet.rollux.com",
       rpcSource: "https://testnet.rollux.com:2814/",
