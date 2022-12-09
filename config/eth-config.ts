@@ -14,8 +14,10 @@ const EthConfig = (secrets: any) => {
       bufferBlocks: 0,
       gasWarningAmount: "1",
       blockExplorer: "https://testnet.bscscan.com",
+      //rpcSource:
+        //"https://data-seed-prebsc-1-s1.binance.org:8545",
       rpcSource:
-        "https://rpc.ankr.com/bsc_testnet_chapel/" +  secrets.ankr_id,
+        "https://rpc.ankr.com/bsc_testnet_chapel/" +  secrets.ankr_id,      //ankr is only for monitor reading, for deployment, please use the above common bsc rpc source.
       wsSource:
         "wss://rpc.ankr.com/bsc_testnet_chapel/ws/" + secrets.ankr_id,
       privateKey: secrets.accounts.deployer.priv,
@@ -33,10 +35,9 @@ const EthConfig = (secrets: any) => {
       gasWarningAmount: "1",
       blockExplorer: "https://goerli.etherscan.io",
       //rpcSource:
-        //"https://eth.getblock.io/goerli/?api_key=" +
-        //secrets.getblock_key_goerli,
+        //"https://goerli.infura.io/v3/" + secrets.infura_id_goerli,
       rpcSource:
-        "https://rpc.ankr.com/eth_goerli/" + secrets.ankr_id,
+        "https://rpc.ankr.com/eth_goerli/" + secrets.ankr_id,   //ankr is only for monitor reading, for deployment, please use the above infura rpc source.
       wsSource:
         "wss://rpc.ankr.com/eth_goerli/ws/" + secrets.ankr_id,
       privateKey: secrets.accounts.deployer.priv,
