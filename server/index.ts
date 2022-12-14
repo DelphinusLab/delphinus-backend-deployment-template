@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 
+import contractsInfo from "../config/contracts-info.json";
 import serverConf from "../config/server.json";
 import substrateNode from "../config/substrate-node.json";
 import merkleTreeConfig from "../config/merkle-tree-config.json";
@@ -15,6 +16,9 @@ const port = serverConf.port;
 async function main() {
   const client = new DBClient();
 
+  app.get("/contracts-info", (req, res) => {
+    res.send(JSON.stringify(contractsInfo));
+  });
   app.get("/substrate-node", (req, res) => {
     res.send(JSON.stringify(substrateNode));
   });
